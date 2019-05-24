@@ -5,13 +5,19 @@ class Carousel {
     this.rightButton = document.querySelector('.right-button');
     this.images = document.querySelectorAll('img[src^="./assets/carousel"]');
 
-    this.images.addEventListener('click', (photo) => this.currentIndex(photo));
+    this.images.addEventListener('click', () => this.currentIndex());
 
   }
 
 
-  currentIndex(photo) {
-    this.images.style.backgroundImage = (`${photo}`);
+  currentIndex() {
+    this.images.on('slide', function (e) 
+      let slideFrom = this.images.find('.active').index();
+      let slideTo = this.images.relatedTarget.index();
+     
+
+
+
 
   }
 
@@ -21,10 +27,6 @@ class Carousel {
 let carousel = document.querySelector('.carousel');
 
 carousel = new Carousel(carousel);
-
-
-// section.style.backgroundImage = "url("+slika+")";
-//         document.getElementById("slikaa").style.visibility = "hidden";
 
 
 
