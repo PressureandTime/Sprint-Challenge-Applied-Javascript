@@ -4,17 +4,23 @@ class Carousel {
     this.leftButton = this.carousel.querySelector('.left-button');
     this.rightButton = this.carousel.querySelector('.right-button');
     this.images = this.carousel.querySelectorAll('img');
-    this.currentImage = this.images[0].classList.add('active');
-    this.leftButton.addEventListener('click', () => console.log('working') );
-     this.rightButton.addEventListener('click', () => console.log('working'));
+    this.currentIndex = 0;
+    this.currentImage = this.images[this.currentIndex].classList.add('active');
+    this.leftButton.addEventListener('click', () => this.changeImage());
+    this.rightButton.addEventListener('click', () => this.changeImage());
 
   }
 
 
-  currentIndex() {
-
- 
-    
+  changeImage() {
+    this.images.forEach((image) => {
+      image.classList.remove('active');
+    });
+    this.currentIndex++;
+    if (this.currentIndex === this.images.length) {
+      this.currentIndex = 0;
+    }
+    this.currentImage = this.images[this.currentIndex].classList.add('active');
 
 
   }
@@ -22,10 +28,9 @@ class Carousel {
 
 }
 
-let carousel = document.querySelector('.carousel');
+const carousel = document.querySelector('.carousel');
 
- new Carousel(carousel);
-
+new Carousel(carousel);
 
 
 /* If You've gotten this far, you're on your own! Although we will give you some hints:
