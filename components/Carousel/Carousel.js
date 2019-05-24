@@ -6,15 +6,17 @@ class Carousel {
     this.images = this.carousel.querySelectorAll('img');
     this.currentIndex = 0;
     this.currentImage = this.images[this.currentIndex].classList.add('active');
-    this.leftButton.addEventListener('click', () => this.changeImage());
-    this.rightButton.addEventListener('click', () => this.changeImage());
+    // console.log(this.images[this.currentIndex]);
+    this.leftButton.addEventListener('click', () => this.slideImageLeft());
+    this.rightButton.addEventListener('click', () => this.slideImageRight());
 
   }
 
 
-  changeImage() {
+  slideImageRight() {
     this.images.forEach((image) => {
       image.classList.remove('active');
+      console.log(image);
     });
     this.currentIndex++;
     if (this.currentIndex === this.images.length) {
@@ -22,9 +24,22 @@ class Carousel {
     }
     this.currentImage = this.images[this.currentIndex].classList.add('active');
 
-
   }
 
+
+  slideImageLeft() {
+    this.images.forEach((image) => {
+      image.classList.remove('active');
+      console.log(image);
+    });
+
+    this.currentIndex++;
+    if (this.currentIndex === this.images.length) {
+      this.currentIndex = 0;
+    }
+    this.currentImage = this.images[this.currentIndex].classList.add('active');
+
+  }
 
 }
 
