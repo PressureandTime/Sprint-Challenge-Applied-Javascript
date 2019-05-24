@@ -5,13 +5,12 @@ class Carousel {
     this.rightButton = document.querySelector('.right-button');
     this.images = document.querySelectorAll('img[src^="./assets/carousel"]');
 
-    this.images.addEventListener('click', () => this.currentIndex());
+    this.images.addEventListener('slide', () => this.currentIndex());
 
   }
 
 
   currentIndex() {
-    this.images.on('slide', function (e) 
       let slideFrom = this.images.find('.active').index();
       let slideTo = this.images.relatedTarget.index();
      
