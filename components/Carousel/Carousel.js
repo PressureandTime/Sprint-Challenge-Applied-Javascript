@@ -1,17 +1,19 @@
 class Carousel {
-    constructor(carousel) {
-        this.carousel = carousel;
-        this.leftButton = document.querySelector('.left-button');
-        this.rightButton = document.querySelector('.right-button');
-        this.images = document.querySelectorAll('img[src^="./assets/carousel"]');
+  constructor(carousel) {
+    this.carousel = carousel;
+    this.leftButton = document.querySelector('.left-button');
+    this.rightButton = document.querySelector('.right-button');
+    this.images = document.querySelectorAll('img[src^="./assets/carousel"]');
 
-    }
+    this.images.addEventListener('click', (photo) => this.currentIndex(photo));
+
+  }
 
 
-    currentIndex() {
-        this.
+  currentIndex(photo) {
+    this.images.style.backgroundImage = (`${photo}`);
 
-    }
+  }
 
 
 }
@@ -19,6 +21,10 @@ class Carousel {
 let carousel = document.querySelector('.carousel');
 
 carousel = new Carousel(carousel);
+
+
+// section.style.backgroundImage = "url("+slika+")";
+//         document.getElementById("slikaa").style.visibility = "hidden";
 
 
 
