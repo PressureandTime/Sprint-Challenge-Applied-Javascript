@@ -1,27 +1,20 @@
 class Carousel {
   constructor(carousel) {
     this.carousel = carousel;
-    this.leftButton = document.querySelector('.left-button');
-    this.rightButton = document.querySelector('.right-button');
-    this.images = document.querySelectorAll('img[src^="./assets/carousel"]');
-    this.totalPhotos = this.images.length;
-    this.slide = 0;
-    this.moving = true;
-    this.rightButton.addEventListener('click', () => this.change());
-    
+    this.leftButton = this.carousel.querySelector('.left-button');
+    this.rightButton = this.carousel.querySelector('.right-button');
+    this.images = this.carousel.querySelectorAll('img');
+    this.currentImage = this.images[0].classList.add('active');
+    this.leftButton.addEventListener('click', () => console.log('working') );
+     this.rightButton.addEventListener('click', () => console.log('working'));
+
   }
 
 
-  change() {
+  currentIndex() {
 
-    slide = 0,
-    moving = true;
-
-    //   let slideFrom = this.images.find('.active').index();
-    //   let slideTo = this.images.relatedTarget.index();
-     
-
-
+ 
+    
 
 
   }
@@ -31,7 +24,7 @@ class Carousel {
 
 let carousel = document.querySelector('.carousel');
 
-carousel = new Carousel(carousel);
+ new Carousel(carousel);
 
 
 
