@@ -4,15 +4,21 @@ class Carousel {
     this.leftButton = document.querySelector('.left-button');
     this.rightButton = document.querySelector('.right-button');
     this.images = document.querySelectorAll('img[src^="./assets/carousel"]');
-
-    this.images.addEventListener('slide', () => this.currentIndex());
-
+    this.totalPhotos = this.images.length;
+    this.slide = 0;
+    this.moving = true;
+    this.rightButton.addEventListener('click', () => this.change());
+    
   }
 
 
-  currentIndex() {
-      let slideFrom = this.images.find('.active').index();
-      let slideTo = this.images.relatedTarget.index();
+  change() {
+
+    slide = 0,
+    moving = true;
+
+    //   let slideFrom = this.images.find('.active').index();
+    //   let slideTo = this.images.relatedTarget.index();
      
 
 
